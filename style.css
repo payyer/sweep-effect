@@ -1,0 +1,66 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+:root {
+  --orange: #f5742a;
+  --blue: #005d9b;
+}
+
+body{
+  background-color: rgb(10, 10, 10);
+  min-height: 100dvh;
+}
+.gnav {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gnav__list {
+ 
+}
+
+
+.gnav__item {
+  position: relative;
+  border-top: 1px solid gray;
+}
+.gnav__item:nth-child(3) {
+  border-bottom: 1px solid gray;
+}
+
+.gnav__item::before {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--orange) var(--light-orange-percent),
+    var(--blue)
+  );
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  position: absolute
+}
+
+.gnav__item:hover::before {
+  cursor: pointer;
+  width: 100%;
+  transition: width 0.5s ease;
+}
+
+.gnav__link {
+  font-family: "Rubik Wet Paint", system-ui;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 6rem;
+  padding: 2vw 2vw;
+}
+
